@@ -17,11 +17,20 @@
     "typescript": "^4.5.4",
     "web-vitals": "^2.1.2"
   },
+  "author": "Glory Day",
+  "build": {
+    "appId": "com.appId"
+  },
+  "main": "public/main.js",
+  "homepage": "./",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test",
+    "react-eject": "react-scripts eject",
+    "start": "concurrently \"cross-env NODE_ENV=development BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "build": "yarn react-build && electron-builder",
+    "release": "yarn react-build && electron-builder --publish=always"
   },
   "eslintConfig": {
     "extends": [
