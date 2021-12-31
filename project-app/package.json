@@ -1,6 +1,7 @@
 {
   "name": "project-app",
   "version": "0.1.0",
+  "main": "public/application.js",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
@@ -23,7 +24,7 @@
     "eject": "react-scripts eject",
     "start-renderer": "cross-env BROWSER=none npm run start",
     "start-main": "electron .",
-    "compile-main": "tsc ./public/electron.ts",
+    "compile-main": "tsc ./public/application.ts",
     "start-main-after-renderer": "wait-on http://localhost:3000 && npm run start-main",
     "dev": "concurrently -n renderer, main 'npm:start-renderer' 'npm:start-main-after-renderer'",
     "dist": "npm run build && electron-builder --dir",
@@ -46,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.9.1"
   }
 }
