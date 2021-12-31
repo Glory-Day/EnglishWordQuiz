@@ -1,2 +1,5 @@
 # Ignore code-workspace extension
 *.code-workspace
+
+# Ignore node_module file
+node_modules
