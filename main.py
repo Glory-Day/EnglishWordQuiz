@@ -8,7 +8,7 @@ if __name__ == "__main__":
     app = QGuiApplication(sys.argv)
     engine = QQmlApplicationEngine()
     
-    engine.load(os.path.join(os.path.dirname(__file__), "qml/process.qml"))
+    engine.load(os.path.join(os.path.dirname(__file__), "qml/progress.qml"))
     
     if not engine.rootObjects():
         sys.exit(-1)
