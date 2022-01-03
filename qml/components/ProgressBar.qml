@@ -7,29 +7,28 @@ Item {
     implicitWidth: 250
     implicitHeight: 250
 
-    // Properties
-    // General
+    // General Properties
     property bool isRound: true
     property int defaultAngle: -90
     property real maxValue: 100
     property real value: 50
     property int samples: 12
 
-    // Drop Shadow
+    // Shadow Properties
     property bool isShadow: false
     property color shadowColor: "#000000"
     property int shadowRadius: 10
 
-    // Background Circle
+    // Background Circle Properties
     property color backgroundColor: "transparent"
     property color strokeColor: "#7e7e7e"
     property int strokeWidth: 16
 
-    // Progress Circle
+    // Progress Circle Properties
     property color progressColor: "#55aaff"
     property int progressWidth: 16
 
-    // Text
+    // Text Properties
     property string text: "%"
     property bool textShowValue: true
     property string textFontFamily: "Segoe UI"
