@@ -57,7 +57,7 @@ Item {
         layer.effect: progressBar.isShadow ? internal.dropShadow : null
 
         ShapePath {
-            id: pathBG
+            id: backgroundPath
             fillColor: progressBar.backgroundColor
             strokeColor: progressBar.strokeColor
             strokeWidth: progressBar.strokeWidth

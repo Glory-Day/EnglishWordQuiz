@@ -23,6 +23,7 @@ Window {
         strokeWidth: 2
         isRound: true
         isShadow: true
+        // TODO: Change 'value' to get 'backend'
         value: slider.value
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
@@ -32,5 +33,9 @@ Window {
         id: slider
         to: 100
         value: 30
+    }
+
+    Connections {
+        target: backend
     }
 }
