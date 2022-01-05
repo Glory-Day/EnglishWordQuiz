@@ -28,6 +28,11 @@ Item {
     property color progressColor: "#55aaff"
     property int progressWidth: 16
 
+    // Image Properties
+    property url imageUrl: ""
+    property int imageWidth: 160
+    property int imageHeight: 160
+
     // Text Properties
     property string text: "%"
     property bool textShowValue: true
@@ -55,6 +60,32 @@ Item {
         layer.enabled: true
         layer.samples: progressBar.samples
         layer.effect: progressBar.isShadow ? internal.dropShadow : null
+
+        Column {
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenterOffset: -7
+            anchors.horizontalCenterOffset: 0
+            
+            Image {
+                id: image
+                width: imageWidth
+                height: imageHeight
+                source: imageUrl
+                smooth: true
+                fillMode: Image.PreserveAspectFit
+            }
+
+            Text {
+                id: textProgress
+                text: progressBar.textShowValue ? parseInt(progressBar.value) + progressBar.text : progressBar.text
+                color: progressBar.textColor
+                font.pointSize: progressBar.textSize
+                font.family: progressBar.textFontFamily
+                font.bold: true
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+        }
 
         ShapePath {
             id: backgroundPath
@@ -88,16 +119,6 @@ Item {
                 startAngle: progressBar.defaultAngle
                 sweepAngle: (360 / progressBar.maxValue * progressBar.value)
             }
-        }
-
-        Text {
-            id: textProgress
-            text: progressBar.textShowValue ? parseInt(progressBar.value) + progressBar.text : progressBar.text
-            color: progressBar.textColor
-            font.pointSize: progressBar.textSize
-            font.family: progressBar.textFontFamily
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.horizontalCenter: parent.horizontalCenter
         }
     }
 }

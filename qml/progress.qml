@@ -18,9 +18,10 @@ Window {
 
     ProgressBar {
         text: "% loaded..."
-        progressColor: "#ff007f"
-        progressWidth: 6
-        strokeWidth: 2
+        progressColor: "#4A96D9"
+        progressWidth: 16
+        strokeWidth: 6
+        imageUrl: "../resources/application_icon.png"
         isRound: true
         isShadow: true
         // TODO: Change 'value' to get 'backend'
