@@ -21,7 +21,7 @@ Window {
         progressColor: "#4A96D9"
         progressWidth: 16
         strokeWidth: 6
-        imageUrl: "../resources/application_icon.png"
+        imageUrl: "../resources/application_logo.png"
         isRound: true
         isShadow: true
         // TODO: Change 'value' to get 'backend'

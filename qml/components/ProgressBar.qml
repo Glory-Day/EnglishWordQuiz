@@ -36,7 +36,7 @@ Item {
     // Text Properties
     property string text: "%"
     property bool textShowValue: true
-    property string textFontFamily: "Segoe UI"
+    property string textFontFamily: "JetBrainsMono Nerd Font"
     property int textSize: 12
     property color textColor: "#FFFFFF"
 
@@ -64,9 +64,10 @@ Item {
         Column {
             anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.verticalCenterOffset: -7
+            anchors.verticalCenterOffset: -10.5
             anchors.horizontalCenterOffset: 0
             
+            // Application Icon Image
             Image {
                 id: image
                 width: imageWidth
@@ -76,6 +77,7 @@ Item {
                 fillMode: Image.PreserveAspectFit
             }
 
+            // Application Loading Text
             Text {
                 id: textProgress
                 text: progressBar.textShowValue ? parseInt(progressBar.value) + progressBar.text : progressBar.text
@@ -87,6 +89,7 @@ Item {
             }
         }
 
+        // Loading Stroke Shape
         ShapePath {
             id: backgroundPath
             fillColor: progressBar.backgroundColor
@@ -104,6 +107,7 @@ Item {
             }
         }
 
+        // Loading Process Bar Shape
         ShapePath {
             id: path
             fillColor: "transparent"
