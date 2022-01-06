@@ -11,7 +11,7 @@ Window {
     height: 300
     color: "#00000000"
     visible: true
-    title: qsTr("LOADING...")
+    title: qsTr("LOADING")
 
     // Remove title bar
     flags: Qt.Window | Qt.FramelessWindowHint
