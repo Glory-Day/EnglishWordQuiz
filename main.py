@@ -31,7 +31,7 @@ if __name__ == "__main__":
     app.setWindowIcon(QIcon("application_icon.ico"))
     
     # Load QML file
-    engine.load(os.path.join(os.path.dirname(__file__), "qml/progress.qml"))
+    engine.load(os.path.join(os.path.dirname(__file__), "qml/main.qml"))
     
     if not engine.rootObjects():
         sys.exit(-1)

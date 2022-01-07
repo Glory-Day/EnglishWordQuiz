@@ -26,8 +26,10 @@ Window {
         isShadow: true
         // TODO: Change 'value' to get 'backend'
         value: slider.value
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.horizontalCenter: parent.horizontalCenter
+        anchors {
+            verticalCenter: parent.verticalCenter
+            horizontalCenter: parent.horizontalCenter
+        }
     }
 
     Slider {

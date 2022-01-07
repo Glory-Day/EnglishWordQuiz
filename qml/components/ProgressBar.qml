@@ -56,16 +56,22 @@ Item {
 
     Shape {
         id: shape
-        anchors.fill: parent
-        layer.enabled: true
-        layer.samples: progressBar.samples
-        layer.effect: progressBar.isShadow ? internal.dropShadow : null
+        anchors {
+            fill: parent
+        }
+        layer {
+            enabled: true
+            samples: progressBar.samples
+            effect: progressBar.isShadow ? internal.dropShadow : null
+        }
 
         Column {
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.verticalCenterOffset: -10.5
-            anchors.horizontalCenterOffset: 0
+            anchors {
+                verticalCenter: parent.verticalCenter
+                horizontalCenter: parent.horizontalCenter
+                verticalCenterOffset: -10.5
+                horizontalCenterOffset: 0
+            }
             
             // Application Icon Image
             Image {
@@ -82,10 +88,14 @@ Item {
                 id: textProgress
                 text: progressBar.textShowValue ? parseInt(progressBar.value) + progressBar.text : progressBar.text
                 color: progressBar.textColor
-                font.pointSize: progressBar.textSize
-                font.family: progressBar.textFontFamily
-                font.bold: true
-                anchors.horizontalCenter: parent.horizontalCenter
+                font {
+                    pointSize: progressBar.textSize
+                    family: progressBar.textFontFamily
+                    bold: true
+                }
+                anchors {
+                    horizontalCenter: parent.horizontalCenter
+                }
             }
         }
 
