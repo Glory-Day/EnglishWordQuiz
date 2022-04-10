@@ -33,8 +33,8 @@ Button {
         // Icon Image Component
         Image {
             id: icon
-            width: 8
-            height: 8
+            width: 10
+            height: 10
             source: iconPath
             fillMode: Image.PreserveAspectFit
             visible: true
