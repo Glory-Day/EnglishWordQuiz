@@ -1,9 +1,10 @@
 import sys
 
 import tkinter
-import tkinter.messagebox as messageBox
+import tkinter.messagebox as message_box
 
 from PyQt5.QtGui import QGuiApplication
+
 
 class Message:
     def __init__(self) -> None:
@@ -21,7 +22,7 @@ class Message:
     def database_load_failed(self, path: str) -> None:
         # Error message text.
         error = f"SQLite3 Error: Failed to connect {path}"
-        messageBox.showerror(self.__application_name, error)
+        message_box.showerror(self.__application_name, error)
         sys.exit(-1)
         
     # Main application setter property.

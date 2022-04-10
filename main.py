@@ -8,9 +8,11 @@ from PyQt5.QtCore import QObject
 from utility.message import message
 from utility.database import Database
 
+
 class Window(QObject):
     def __init__(self):
         QObject.__init__(self)
+
 
 if __name__ == "__main__":
     app = QGuiApplication(sys.argv)
@@ -23,7 +25,7 @@ if __name__ == "__main__":
     window = Window()
     engine.rootContext().setContextProperty("backend", window)
     
-    # Set application extra infomation
+    # Set application extra information
     app.setOrganizationName("Glory Day")
     app.setOrganizationDomain("Republic of Korea")
     
