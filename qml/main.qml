@@ -20,16 +20,52 @@ Window {
     // Background Component
     Rectangle {
         id: background
-        color: "#181A26"
+        color: "#292929"
         radius: 15
         z: 1
         anchors.fill: parent
 
-        // Top Bar Component
+        // Menu Background Component
+        Rectangle {
+            id: menuBackground
+            width: 300
+            height: 720
+            color: "#00000000"
+            anchors {
+                top: background.top
+                bottom: background.bottom
+                left: background.left
+            }
+
+            // Menu Left Background Component
+            Rectangle {
+                id: leftPart
+                width: 300
+                height: 720
+                radius: 15
+                color: "#333333"
+                anchors.fill: menuBackground
+            }
+
+            // Menu Right Background Component
+            Rectangle {
+                id: rightPart
+                width: 150
+                height: 720
+                color: "#333333"
+                anchors {
+                    top: menuBackground.top
+                    bottom: menuBackground.bottom
+                    right: menuBackground.right
+                }
+            }
+        }
+
+        //Top Bar Component
         Rectangle {
             id: topBar
-            width: background.width
-            height: 30
+            width: 1280
+            height: 40
             color: "#00000000"
             anchors {
                 top: background.top
@@ -37,32 +73,31 @@ Window {
                 right: background.right
             }
 
-            // Top Bar Round Part Component
-            Rectangle {
-                id: topPart
-                width: topBar.width
-                height: topBar.height
-                color: "#00010D"
-                radius: 15
+            TopBarButton {
+                id: closeButton
+                iconPath: "../resources/close_icon.png"
+                backgroundColor: "#FF6666"
                 anchors {
-                    fill: topBar
-                }
-            }
-
-            // Top Bar Rectangle Part Component
-            Rectangle {
-                id: bottomPart
-                width: topBar.width
-                height: topBar.height / 2
-                color: "#00010D"
-                anchors {
-                    bottom: topBar.bottom
                     left: topBar.left
-                    right: topBar.right
+                    leftMargin: 25
+                    verticalCenter: topBar.verticalCenter
                 }
+                onClicked: window.close()
             }
 
-            // DragHandler To Move Main Window
+            TopBarButton {
+                id: minimizeButton
+                iconPath: "../resources/minimize_icon.png"
+                backgroundColor: "#FFC300"
+                anchors {
+                    left: closeButton.left
+                    leftMargin: 25
+                    verticalCenter: topBar.verticalCenter
+                }
+                onClicked: window.showMinimized()
+            }
+
+            //DragHandler To Move Main Window
             DragHandler {
                 onActiveChanged: if (active) {
                     window.startSystemMove()
