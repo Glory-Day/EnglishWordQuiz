@@ -1,2 +1,5 @@
 # code-workspace
 *.code-workspace
+
+# jetbrain pycharm configs
+.idea/
