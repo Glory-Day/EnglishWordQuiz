@@ -3,3 +3,6 @@
 
 # jetbrain pycharm configs
 .idea/
+
+# utility __pycache__ folder
+utility/__pycache__/
