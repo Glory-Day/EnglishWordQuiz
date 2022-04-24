@@ -175,7 +175,7 @@ Window {
             Loader {
                 id: loader
                 anchors.fill: contents
-                source: Qt.resolvedUrl("pages/homePage.qml")
+                source: Qt.resolvedUrl("pages/selectPage.qml")
             }
         }
     }

@@ -5,9 +5,11 @@ import QtGraphicalEffects 1.15
 Button {
     id: menuButton
 
-    //Properties
+    //General Properties
     property url iconPath: ""
     property string buttonName: ""
+
+    //Color Properties
     property color backgroundDefaultColor: "#00FFFFFF"
     property color backgroundDownColor: "#12FFFFFF"
     property color backgroundHoveredColor: "#0DFFFFFF"

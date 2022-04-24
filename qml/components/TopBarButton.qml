@@ -5,9 +5,13 @@ import QtGraphicalEffects 1.15
 Button {
     id: topBarButton
 
-    //Properties
+    //General Properties
     property url iconPath: ""
+
+    //Color Properties
     property color backgroundColor: "#00000000"
+
+    //Opacity Properties
     property real opacityDown: 1
     property real opacityHovered: 0.5
 
