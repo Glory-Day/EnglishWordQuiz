@@ -13,7 +13,7 @@ Window {
     visible: true
     title: qsTr("LOADING")
 
-    // Remove title bar
+    //Remove title bar
     flags: Qt.Window | Qt.FramelessWindowHint
 
     ProgressBar {
@@ -24,7 +24,7 @@ Window {
         imageUrl: "../resources/application_logo.png"
         isRound: true
         isShadow: true
-        // TODO: Change 'value' to get 'backend'
+        //TODO: You need to fix it!
         value: slider.value
         anchors {
             verticalCenter: parent.verticalCenter

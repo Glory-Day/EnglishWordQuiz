@@ -5,7 +5,7 @@ import QtGraphicalEffects 1.15
 Button {
     id: topBarButton
 
-    // Properties
+    //Properties
     property url iconPath: ""
     property color backgroundColor: "#00000000"
     property real opacityDown: 1
@@ -14,23 +14,23 @@ Button {
     QtObject {
         id: internal
 
-        property var dynamicOpacity: if (topBarButton.down){
-                                       topBarButton.down ? opacityDown : opacityHovered
-                                    } else {
-                                       topBarButton.hovered ? opacityHovered : 0
-                                    }
+        property var dynamicOpacity: if (topBarButton.down) {
+                                         topBarButton.down ? opacityDown : opacityHovered
+                                     } else {
+                                         topBarButton.hovered ? opacityHovered : 0
+                                     }
     }
 
     width: 16
     height: 16
 
-    // Background Component
+    //Background Component
     background: Rectangle {
         id: background
         color: backgroundColor
         radius: 15
 
-        // Icon Image Component
+        //Icon Image Component
         Image {
             id: icon
             width: 10
@@ -39,7 +39,7 @@ Button {
             fillMode: Image.PreserveAspectFit
             visible: true
             opacity: internal.dynamicOpacity
-            antialiasing: false
+            antialiasing: true
             anchors {
                 verticalCenter: background.verticalCenter
                 horizontalCenter: background.horizontalCenter

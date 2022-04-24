@@ -7,40 +7,40 @@ Item {
     implicitWidth: 250
     implicitHeight: 250
 
-    // General Properties
+    //General Properties
     property bool isRound: true
     property int defaultAngle: -90
     property real maxValue: 100
     property real value: 50
     property int samples: 12
 
-    // Shadow Properties
+    //Shadow Properties
     property bool isShadow: false
     property color shadowColor: "#000000"
     property int shadowRadius: 10
 
-    // Background Circle Properties
+    //Background Circle Properties
     property color backgroundColor: "transparent"
     property color strokeColor: "#7e7e7e"
     property int strokeWidth: 16
 
-    // Progress Circle Properties
+    //Progress Circle Properties
     property color progressColor: "#55aaff"
     property int progressWidth: 16
 
-    // Image Properties
+    //Image Properties
     property url imageUrl: ""
     property int imageWidth: 160
     property int imageHeight: 160
 
-    // Text Properties
+    //Text Properties
     property string text: "%"
     property bool textShowValue: true
     property string textFontFamily: "JetBrainsMono Nerd Font"
     property int textSize: 12
     property color textColor: "#FFFFFF"
 
-    // Internal Properties/Functions
+    //Internal Properties/Functions
     QtObject{
         id: internal
 
@@ -73,7 +73,7 @@ Item {
                 horizontalCenterOffset: 0
             }
             
-            // Application Icon Image
+            //Application Icon Image
             Image {
                 id: image
                 width: imageWidth
@@ -83,7 +83,7 @@ Item {
                 fillMode: Image.PreserveAspectFit
             }
 
-            // Application Loading Text
+            //Application Loading Text
             Text {
                 id: textProgress
                 text: progressBar.textShowValue ? parseInt(progressBar.value) + progressBar.text : progressBar.text
@@ -99,7 +99,7 @@ Item {
             }
         }
 
-        // Loading Stroke Shape
+        //Loading Stroke Shape
         ShapePath {
             id: backgroundPath
             fillColor: progressBar.backgroundColor
@@ -117,7 +117,7 @@ Item {
             }
         }
 
-        // Loading Process Bar Shape
+        //Loading Process Bar Shape
         ShapePath {
             id: path
             fillColor: "transparent"
