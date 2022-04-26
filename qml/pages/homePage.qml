@@ -12,15 +12,14 @@ Item {
         color: "#00000000"
 
         //Image Component
-        //TODO: You need to fix it!
-        Rectangle {
+        Image {
             id: logo
-            color: "#FFFFFF"
-            width: 500
-            height: 500
+            width: 400
+            height: 400
+            source: "../../resources/application_background_image.png"
             anchors {
                 top: background.top
-                topMargin: 20
+                topMargin: 70
                 horizontalCenter: background.horizontalCenter
             }
         }
