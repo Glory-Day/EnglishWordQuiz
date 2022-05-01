@@ -12,9 +12,9 @@ Button {
     property int buttonTextSize: 0
 
     //Color Properties
-    property color backgroundDefaultColor: "#1e90ff"
-    property color backgroundHoveredColor: "#4ca5ff"
-    property color backgroundDownColor: "#65b3ff"
+    property color backgroundDefaultColor: "#1E90FF"
+    property color backgroundHoveredColor: "#4CA5FF"
+    property color backgroundDownColor: "#65B3FF"
     property bool isVisited: false
 
     QtObject {

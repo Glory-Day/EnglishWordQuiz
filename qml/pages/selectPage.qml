@@ -12,170 +12,208 @@ Item {
         height: 680
         color: "#00000000"
 
-        //Type Mode Selection Background Component
         Rectangle {
-            id: typeModeSelectionBackground
+            id: optionsBackground
+            width: 600
+            height: 260
             color: "#212121"
-            width: 530
-            height: 160
             radius: 15
             anchors {
                 top: background.top
-                topMargin: 170
+                topMargin: 120
                 horizontalCenter: background.horizontalCenter
             }
 
-            //Type Mode Selection Text Background Component
-            Rectangle {
-                id: typeModeSelectionTextBackground
-                color: "#00000000"
-                width: 490
-                height: 50
+            Column {
+                id: languageOptions
+                width: 560
+                height: 70
+                spacing: 10
                 anchors {
-                    top: typeModeSelectionBackground.top
+                    top: optionsBackground.top
                     topMargin: 20
-                    horizontalCenter: typeModeSelectionBackground.horizontalCenter
+                    horizontalCenter: optionsBackground.horizontalCenter
                 }
 
-                //Type Mode Selection Text Component
                 Text {
-                    id: typeModeSelectionText
+                    id: languageOptionsText
+                    text: qsTr("Selete Language Option")
                     color: "#DCDCDC"
-                    text: qsTr("Language Type Select")
                     font {
                         bold: true
                         family: "JetBrainsMono NF Medium"
-                        pointSize: 18
+                        pointSize: 10
                     }
                     anchors {
-                        verticalCenter: typeModeSelectionTextBackground.verticalCenter
-                        horizontalCenter: typeModeSelectionTextBackground.horizontalCenter
+                        left: languageOptions.left
                     }
+                }
+
+                ComboBox {
+                    id: languageOptionComboBox
+                    width: 560
+                    height: 50
+                    model: ["Only Korean", "Only English", "Random Language"]
                 }
             }
 
-            //Type Mode Selection Buttons Component
-            Row {
-                id: typeModeSelectionButtons
-                width: 490
-                height: 50
-                spacing: 20
+            Column {
+                id: modeOptions
+                width: 560
+                height: 130
+                spacing: 10
                 anchors {
-                    top: typeModeSelectionTextBackground.bottom
+                    top: languageOptions.bottom
                     topMargin: 20
-                    horizontalCenter: typeModeSelectionBackground.horizontalCenter
+                    horizontalCenter: optionsBackground.horizontalCenter
                 }
 
-                //Type Mode Selection Button Component For Select Only Korean Mode
-                TextButton {
-                    id: onlyKoreanModeButton
-                    buttonWidth: 150
-                    buttonHeight: 50
-                    buttonName: qsTr("Only Ko")
-                    buttonTextSize: 18
+                Text {
+                    id: modeOptionsText
+                    text: qsTr("Selete Mode Option")
+                    color: "#DCDCDC"
+                    font {
+                        bold: true
+                        family: "JetBrainsMono NF Medium"
+                        pointSize: 10
+                    }
+                    anchors {
+                        left: modeOptions.left
+                    }
                 }
 
-                //Type Mode Selection Button Component For Select Only English Mode
-                TextButton {
-                    id: onlyEnglishModeButton
-                    buttonWidth: 150
-                    buttonHeight: 50
-                    buttonTextSize: 18
-                    buttonName: qsTr("Only Eng")
+                ComboBox {
+                    id: modeOptionComboBox
+                    width: 560
+                    height: 50
+                    model: ["Select Mode", "All Mode"]
                 }
 
-                //Type Mode Selection Button Component For Select Random Mode
-                TextButton {
-                    id: randomLanguageModeButton
-                    buttonWidth: 150
-                    buttonHeight: 50
-                    buttonName: qsTr("Random")
-                    buttonTextSize: 18
+                Row {
+                    width: 560
+                    height: 50
+                    spacing: 20
+
+                    Slider {
+                        id: modeOptionSlider
+                        width: 470
+                        height: 50
+                        from: 1
+                        to: 100
+                        value: 1
+                        snapMode: Slider.SnapAlways
+                        stepSize: 1
+                    }
+
+                    Rectangle {
+                        id: modeOptionSliderValueBackground
+                        width: 70
+                        height: 50
+                        color: "#333333"
+                        radius: 15
+
+                        Text {
+                            id: modeOptionSliderValue
+                            text: modeOptionSlider.value
+                            color: "#DCDCDC"
+                            font {
+                                bold: true
+                                family: "JetBrainsMono NF Medium"
+                                pointSize: 15
+                            }
+                            anchors {
+                                verticalCenter: modeOptionSliderValueBackground.verticalCenter
+                                horizontalCenter: modeOptionSliderValueBackground.horizontalCenter
+                            }
+                        }
+                    }
                 }
             }
         }
 
-        //Count Mode Selection Background Component
         Rectangle {
-            id: countModeSelectionBackground
-            color: "#212121"
-            width: 530
+            id: buttonBackground
+            width: 600
             height: 160
+            color: "#212121"
             radius: 15
             anchors {
-                top: typeModeSelectionBackground.bottom
+                top: optionsBackground.bottom
                 topMargin: 20
-                horizontalCenter: typeModeSelectionBackground.horizontalCenter
+                horizontalCenter: background.horizontalCenter
             }
 
-            //Count Mode Selection Text Background Component
-            Rectangle {
-                id: countModeSelectionTextBackground
-                color: "#00000000"
-                width: 490
-                height: 50
-                anchors {
-                    top: countModeSelectionBackground.top
-                    topMargin: 20
-                    horizontalCenter: countModeSelectionBackground.horizontalCenter
-                }
-
-                //Count Mode Selection Text Component
-                Text {
-                    id: countModeSelectionText
-                    color: "#DCDCDC"
-                    text: qsTr("Language Select")
-                    font {
-                        bold: true
-                        family: "JetBrainsMono NF Medium"
-                        pointSize: 18
-                    }
-                    anchors {
-                        verticalCenter: countModeSelectionTextBackground.verticalCenter
-                        horizontalCenter: countModeSelectionTextBackground.horizontalCenter
-                    }
-                }
-            }
-
-            //Count Mode Selection Buttons Component
-            Row {
-                id: countModeSelectionButtons
-                width: 490
-                height: 50
+            Column {
+                width: 440
+                height: 120
                 spacing: 20
                 anchors {
-                    top: countModeSelectionTextBackground.bottom
+                    top: buttonBackground.top
+                    left: buttonBackground.left
                     topMargin: 20
-                    horizontalCenter: countModeSelectionBackground.horizontalCenter
+                    leftMargin: 20
                 }
 
-                //Count Mode Selection Button Component For Select Tag Mode
-                TextButton {
-                    id: tagModeButton
-                    buttonWidth: 150
-                    buttonHeight: 50
-                    buttonName: qsTr("Only Ko")
-                    buttonTextSize: 18
+                Rectangle {
+                    id: seletedLanguageTextBackground
+                    width: 420
+                    height: 50
+                    color: "#333333"
+                    radius: 15
+
+                    Text {
+                        id: seletedLanguageText
+                        text: qsTr("Seleted Language Text")
+                        color: "#DCDCDC"
+                        font {
+                            bold: true
+                            family: "JetBrainsMono NF Medium"
+                            pointSize: 15
+                        }
+                        anchors {
+                            verticalCenter: seletedLanguageTextBackground.verticalCenter
+                            horizontalCenter: seletedLanguageTextBackground.horizontalCenter
+                        }
+                    }
                 }
 
-                //Count Mode Selection Button Component For Select Random Mode
-                TextButton {
-                    id: randomModeButton
-                    buttonWidth: 150
-                    buttonHeight: 50
-                    buttonTextSize: 18
-                    buttonName: qsTr("Only Eng")
-                }
+                Rectangle {
+                    id: seletedModeTextBackground
+                    width: 420
+                    height: 50
+                    color: "#333333"
+                    radius: 15
 
-                //Count Mode Selection Button Component For Select All Mode
-                TextButton {
-                    id: allModeButton
-                    buttonWidth: 150
-                    buttonHeight: 50
-                    buttonName: qsTr("Random")
-                    buttonTextSize: 18
+                    Text {
+                        id: seletedModeText
+                        text: qsTr("Seleted Mode Text")
+                        color: "#DCDCDC"
+                        font {
+                            bold: true
+                            family: "JetBrainsMono NF Medium"
+                            pointSize: 15
+                        }
+                        anchors {
+                            verticalCenter: seletedModeTextBackground.verticalCenter
+                            horizontalCenter: seletedModeTextBackground.horizontalCenter
+                        }
+                    }
+                }
+            }
+
+            TextButton {
+                id: nextButton
+                buttonWidth: 120
+                buttonHeight: 120
+                buttonName: qsTr("OK")
+                buttonTextSize: 20
+                anchors {
+                    top: buttonBackground.top
+                    right: buttonBackground.right
+                    topMargin: 20
+                    rightMargin: 20
                 }
             }
         }
-    }
+    }   
 }
